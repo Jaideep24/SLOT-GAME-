@@ -4,60 +4,99 @@ import random
 
 
 a=10
+
 b=["🔔","🥭","🍉","🥝","💀"]
 
 first=None
 second=None
 third=None
 
-#def play():
-    
-    
-    #print(first,second,third)
+
 def quit():
+    
     global a
+    
     while True:
+        
         answer=input("You have Rs."+str(a)+" Wanna play more?")
+        
         answer=answer.lower()
+        
         if answer=="yes" or answer=="y":
+            
             return True
+            
             print("You now have Rs.",a,"credit")
+            
             break
+        
         elif answer=="no" or answer=="n":
+            
             print("You are left with Rs.",a)
+            
             print("BYE BYE, you know where to come to try your luck on some more money 😉😉😉😏😏")
+            
             return False
+        
         else :
+            
             print("Wrong Input!")
+
 def check_point():
+    
     global a,first,second,third,fourth
+    
     if first==second  or second==third or first == third:
+        
         if (first and second )=="💀" or (second and third)=="💀" \
+        
         or (first and third)=="💀":
+            
             win=-1
+        
         elif first==second==third:
+            
             if first=="bell" and second=="bell" and third=="bell":
+                
                 win=50
+            
             elif first=="💀" and second=="💀" and third=="💀":
+                
                 win=-1*a
+            
             else :
+                
                 win=10
+        
         else :
+            
             win=2
+    
     else:
+        
         win=0
+    
     a+=win
+    
     if win>0:
+        
         if win==50:
+            
             print(first, second, third,"JACKPOT!!! You win Rs.",win)
+        
         else:
+            
             print(first, second, third,"Congrats!! You win Rs.",win)
+    
     else:
+        
         print(first, second, third,"It's OK, You lose Rs.",win)
         
 
 
+
 def run():
+    
     print('''WELCOME TO THE ONE AND ONLY 🤑🤑🤑🤑🤑🤑 SLOT MACHINE 🤑🤑🤑🤑🤑🤑
 
  ::::GAME RULES::::
